@@ -1,0 +1,18 @@
+Home Route (`GET /`):
+   - When a user visits the home page, a query is made to the database to fetch all entries from the `favourites` table.
+   - If successful, the results (favorite jokes) are passed to the `index` template for rendering.
+
+Search Jokes Route (`POST /search`): 
+   - The search term entered by the user is extracted from the request body.
+   - An asynchronous GET request is made to the `icanhazdadjoke` API with the search term.
+   - The jokes received in the response are then passed to the `search` template for rendering.
+
+Save Favorite Joke Route (`POST /favourite`):
+   - This route handles the saving of a favorite joke to the database.
+   - The joke’s ID and text are extracted from the request body.
+   - An SQL query inserts the joke ID and text into the `favourites` table. 
+
+
+setup database
+
+check db.sql file and import database
